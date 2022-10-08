@@ -22,7 +22,7 @@ In the following examples we assume that:
 ```
 
 In the simplest case - if a file is in the root of the folder -
-it will behave the same way as every does today. So:
+it will behave the same way as it does today. So:
 
 ```py
 >>> print(caption_from_path('/sd/data/img-001.jpg', base_path, class_token, token))
@@ -72,7 +72,7 @@ joepenna the dude hanging out by the pool
 But wait! There is more!
 
 If you don't want to caption all of your images -- who has the time anyhow, right? -- you can have
-something along these lines: `/sd/data/joepenna/dude/a_picture_of_S_being_a_C/img-001.jpg` to get:
+something along these lines: `/sd/data/joepenna/dude/a_picture_of_S_being_a_C/img-001@as_a_C_can_be.jpg` to get:
 
 ```py
 >>> filename = '/sd/data/joepenna/dude/a_picture_of_S_being_a_C/img-001@as_a_C_can_be.jpg'
