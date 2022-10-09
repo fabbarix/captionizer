@@ -81,6 +81,16 @@ a picture of joepenna being a dude as a dude can be
 
 ```
 
+If you used one of the tokens as part of the path to the file, the tokens will not be added to the caption, so
+if you have `/sd/data/joepenna/dude/a_photo_of_S_milling_about/img-001.jpg`, the result will be:
+
+```py
+>>> filename = '/sd/data/joepenna/dude/a_photo_of_S_milling_about/img-001.jpg'
+>>> print(caption_from_path(filename, base_path, class_token, token))
+a photo of joepenna milling about
+
+```
+
 Finally - I promise - you can use captions directly in the old fashioned *let's dump all of our
 images in the same bucket* method, so `/sd/data/img-001@S_being_a_handsome_C.jpg` would spit out:
 
