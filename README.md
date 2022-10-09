@@ -4,7 +4,7 @@ This module creates captions from images in a folder based on
 the folder names and the name of the image file.
 
 ```python
->>> from captioner import caption_from_path
+>>> from captionizer import caption_from_path
 
 ```
 
@@ -128,15 +128,17 @@ print(find_images('/sd/data'))
 If you want to see what all of this sums up to, you can run:
 
 ```bash
-python3 finder.py
+captionizer <folder with data>
 ```
+
+and it will spit out a list of the files it found and the captions generated for them.
 
 ## Running this document as a python test
 
 You what? Really? You don't trust me?? OK:
 
 ```bash
-python3 run_tests.py
+python3 captionizer/run_tests.py
 ```
 
 ## Captions from filenames - for everyone else
@@ -147,7 +149,7 @@ you can use the `generic_captions_from_path` method. the method allows to setup 
 This is an example of usage:
 
 ```py
->>> from captioner import generic_captions_from_path
+>>> from captionizer import generic_captions_from_path
 >>> from typing import OrderedDict
 >>> filename = '/sd/data/img-001@X_is_better_than_S.jpg'
 >>> tokens = OrderedDict([('X', 'Mine'), ('S', 'Yours')])

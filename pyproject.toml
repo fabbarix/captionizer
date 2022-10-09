@@ -1,0 +1,46 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "captionizer"
+version = "1.0.0"
+description = "Creates captions from filenames and paths"
+readme = "README.md"
+authors = [{ name = "Fabio 'MrWHO' Torchetti", email = "fabbari@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["captions", "images", "stable diffusion"]
+dependencies = [ ]
+requires-python = ">=3.0"
+
+[project.urls]
+Homepage = "https://github.com/fabbarix/captionizer"
+
+[project.scripts]
+captionizer = "captionizer.finder:main"
+
+[tool.bumpver]
+current_version = "2022.1001-alpha"
+version_pattern = "YYYY.BUILD[-TAG]"
+commit_message = "bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = true
+
+[tool.setuptools.packages.find]
+include = ["captionizer"]
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = [
+    'current_version = "{version}"',
+]
+"README.md" = [
+    "{version}",
+    "{pep440_version}",
+]
+
