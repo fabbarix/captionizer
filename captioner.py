@@ -1,32 +1,37 @@
 import os
+import re
 
+splitter = re.compile(r'\s|_')
 
 def has_caption(filename):
     if filename is None:
         return False
     return '@' in filename or os.path.dirname(filename) != ''
 
+
 def contains_tokens(template):
-    parts = template.split('_')
+    parts = splitter.split(template)
     return 'S' in parts or 'C' in parts
 
+
 def fill_template(template, token, class_token):
-    parts = [token if part == 'S' else part for part in template.split('_')]
+    parts = [token if part == 'S' else part for part in splitter.split(template)]
     parts = [class_token if part == 'C' else part for part in parts]
     return ' '.join(parts)
+
 
 def template_from_path(filepath):
     filename = os.path.splitext(os.path.basename(filepath))[0]
     filetpl = ''
-    pathtpl = '_'.join(os.path.dirname(filepath).split(os.path.sep))
-    filetpl = 'S_C'
+    pathtpl = ' '.join(os.path.dirname(filepath).split(os.path.sep))
+    filetpl = 'S C'
 
     if '@' in filename:
         filetpl = filename.split('@')[1]
     elif contains_tokens(pathtpl):
         filetpl = ''
 
-    separator = '_' if pathtpl and filetpl else ''
+    separator = ' ' if pathtpl and filetpl else ''
     return f'{pathtpl}{separator}{filetpl}'
 
 

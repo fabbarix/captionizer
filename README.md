@@ -59,7 +59,7 @@ a picture of joepenna
 
 You can see that '*S*' was automatically converted to the subject token. I can hear you scream: 'But what if I
 want to have an "S" in my caption?' - well: *tough luck*! And wait until I tell you that I also eating all your
-*T*s! Yes: if you have a file in `/sd/data/joepenna/dude/img-001@S_the_C_hanging_out_by_the_pool.jpg` then
+*C*s! Yes: if you have a file in `/sd/data/joepenna/dude/img-001@S_the_C_hanging_out_by_the_pool.jpg` then
 your caption becomes:
 
 ```py
@@ -80,6 +80,19 @@ something along these lines: `/sd/data/joepenna/dude/a_picture_of_S_being_a_C/im
 a picture of joepenna being a dude as a dude can be
 
 ```
+
+### Note
+All the examples show and underscore - `_` - in the filename instead of a space. You can use
+regular spaces if your operative system supports it. So:
+
+```py
+>>> filename = '/sd/data/joepenna/dude/a picture of S being a C/img-001@as a C can be.jpg'
+>>> print(caption_from_path(filename, base_path, class_token, token))
+a picture of joepenna being a dude as a dude can be
+
+```
+
+
 
 If you used one of the tokens as part of the path to the file, the tokens will not be added to the caption, so
 if you have `/sd/data/joepenna/dude/a_photo_of_S_milling_about/img-001.jpg`, the result will be:

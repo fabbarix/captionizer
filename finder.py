@@ -17,5 +17,6 @@ def find_captions():
         caption = caption_from_path(file, base_path, 'person', 'randoguy')
         print(f'{file} => "{caption}"')
 
+
 if __name__ == '__main__':
     find_captions()
