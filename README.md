@@ -1,4 +1,4 @@
-# Captions from filenames
+## Captions from filenames - for Stable Diffusion
 
 This module creates captions from images in a folder based on
 the folder names and the name of the image file.
@@ -139,3 +139,19 @@ You what? Really? You don't trust me?? OK:
 python3 run_tests.py
 ```
 
+## Captions from filenames - for everyone else
+
+If you have your own set of tokens to replace - or if you want better tokens than the ones I picked -
+you can use the `generic_captions_from_path` method. the method allows to setup your own mappings.
+
+This is an example of usage:
+
+```py
+>>> from captioner import generic_captions_from_path
+>>> from typing import OrderedDict
+>>> filename = '/sd/data/img-001@X_is_better_than_S.jpg'
+>>> tokens = OrderedDict([('X', 'Mine'), ('S', 'Yours')])
+>>> print(generic_captions_from_path(filename, base_path, tokens))
+Mine is better than Yours
+
+```
