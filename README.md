@@ -120,7 +120,7 @@ Now that we have a more complex structure you can see that listing the files in 
 longer enough, we need to be able to recursively find them given a root data folder. Lucky us:
 
 ```py
-from finder import find_images
+from captionizer import find_images
 
 print(find_images('/sd/data'))
 ```
