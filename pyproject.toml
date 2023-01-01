@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "captionizer"
-version = "1.0.1"
+version = "1.0.2"
 description = "Creates captions from filenames and paths"
 readme = "README.md"
 authors = [{ name = "Fabio 'MrWHO' Torchetti", email = "fabbari@gmail.com" }]
